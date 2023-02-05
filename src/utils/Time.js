@@ -44,7 +44,8 @@ export default class Time {
   }
 
   static getFormattedTimeFromSeconds(totalSeconds, format) {
-    const { seconds: secondsValue, minutes, hours, absoluteMinutes } = Time.getTimeFromSeconds(totalSeconds);
+    const {
+ seconds: secondsValue, minutes, hours, absoluteMinutes } = Time.getTimeFromSeconds(totalSeconds);
     let ampm = '';
     let hoursValue = hours;
 
