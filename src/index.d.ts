@@ -7,6 +7,7 @@ interface TimerSettings {
 interface TimerResult {
     seconds: number;
     minutes: number;
+    absoluteMinutes: number;
     hours: number;
     days: number;
     isRunning: boolean;
