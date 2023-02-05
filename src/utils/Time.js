@@ -4,9 +4,11 @@ export default class Time {
     const days = Math.floor(totalSeconds / (60 * 60 * 24));
     const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
     const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+    const absoluteMinutes = Math.floor(totalSeconds / 60);
     const seconds = Math.floor(totalSeconds % 60);
 
     return {
+      absoluteMinutes,
       seconds,
       minutes,
       hours,
@@ -42,7 +44,7 @@ export default class Time {
   }
 
   static getFormattedTimeFromSeconds(totalSeconds, format) {
-    const { seconds: secondsValue, minutes, hours } = Time.getTimeFromSeconds(totalSeconds);
+    const { seconds: secondsValue, minutes, hours, absoluteMinutes } = Time.getTimeFromSeconds(totalSeconds);
     let ampm = '';
     let hoursValue = hours;
 
@@ -55,6 +57,7 @@ export default class Time {
       seconds: secondsValue,
       minutes,
       hours: hoursValue,
+      absoluteMinutes,
       ampm,
     };
   }
